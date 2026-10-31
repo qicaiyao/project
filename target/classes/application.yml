@@ -1,0 +1,21 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: gold-trade-api
+  http:
+    converters:
+      xml:
+        # 去除响应头中的 null 元素
+        enabled: true
+
+# 黄金交易业务参数
+gold:
+  trade:
+    # 买入/卖出手续费率（示例值，实际以银行费率配置为准）
+    fee-rate: 0.0008
+    # 模拟基础金价（元/克），实际生产环境应对接上金所/路透行情源
+    base-price: 615.50
+    # 允许的最小交易克重
+    min-weight: 1.00
